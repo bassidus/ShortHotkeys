@@ -1,6 +1,6 @@
-## Interface: 100007
+## Interface: 100100
 ## Title: ShortHotkeys
-## Version: 1.0.4
+## Version: 1.0.5
 ## Author: bassidus
 ## Notes: A lightweight addon that shortens they keybind text on action buttons
 ShortHotkeys.lua
