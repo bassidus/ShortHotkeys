@@ -1,6 +1,20 @@
-## Interface: 100100
 ## Title: ShortHotkeys
-## Version: 1.0.5 
+## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110100
+
+## Version: 2.0
 ## Author: bassidus
-## Notes: A lightweight addon that shortens they keybind text on action buttons
-ShortHotkeys.lua
+## SavedVariables: ShortHotkeysDB
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceConfig-3.0\AceConfig-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+
+Localization/default.lua
+Localization/deDE.lua
+Core.lua
