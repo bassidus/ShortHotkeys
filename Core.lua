@@ -60,6 +60,7 @@ local options = {
         l2 = Description(), -- new row
 
         ibBackspace = InputBox(_G.KEY_BACKSPACE),
+        ibCapslock = InputBox(_G.CAPSLOCK_KEY_TEXT),
         ibDelete = InputBox(_G.KEY_DELETE),
         ibEnd = InputBox(_G.KEY_END),
         ibHome = InputBox(_G.KEY_HOME),

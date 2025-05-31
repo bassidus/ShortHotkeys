@@ -36,6 +36,7 @@ _G.SHK_LOCAL = {
     [_G.KEY_MOUSEWHEELDOWN] = 'WD',
 
     [_G.KEY_BACKSPACE] = "BS",
+    [_G.CAPSLOCK_KEY_TEXT] = 'CL',
     [_G.KEY_DELETE] = "DE",
     [_G.KEY_END] = "EN",
     [_G.KEY_HOME] = "HM",
