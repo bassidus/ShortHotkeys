@@ -9,23 +9,36 @@ local _order = 0
 local defaults = {
     profile = {
         addon = {
-            keymap = _G.SHK_LOCAL
+            keymap = _G.SHK_LOCAL,
+            hideMacro = false
         },
     }
 }
 
-local function Description(text)
+local function HideMacro()
+    if db.profile.addon.hideMacro then
+        return 0
+    end
+    return 1
+end
+
+local function OrderIncrement()
     _order = _order + 1
+    return _order
+end
+
+local function Description(text)
+    -- _order = _order + 1
     if not text then
         text = '' -- useful for making new row
     end
     return {
-        type = 'description', fontSize = 'medium', name = text, order = _order
+        type = 'description', fontSize = 'medium', name = text, order = OrderIncrement()
     }
 end
 
 local function InputBox(_name, text)
-    _order = _order + 1
+    -- _order = _order + 1
     if not text then
         text = _name
     end
@@ -36,7 +49,7 @@ local function InputBox(_name, text)
         set = function(_, value)
             db.profile.addon.keymap[_name] = value
         end,
-        order = _order,
+        order = OrderIncrement(),
         width = 0.9
     }
 end
@@ -47,6 +60,18 @@ local options = {
     type = 'group',
     args = {
         header = Description(_G.SHK_TEXT),
+        hideMacro = {
+            type = "toggle",
+            name = "Hide Macro Text",
+            desc = 'If checked, macro text will be hidden from action bars',
+            get = function() return db.profile.addon.hideMacro end,
+            set = function(_, value)
+                db.profile.addon.hideMacro = value
+            end,
+            order = OrderIncrement()
+        },
+        l0 = Description(), -- new row
+
         ibAlt = InputBox(_G.SHK_ALT, _G.SHK_ALT_TEXT),
         ibCtrl = InputBox(_G.SHK_CTRL, _G.SHK_CTRL_TEXT),
         ibShift = InputBox(_G.SHK_SHIFT, _G.SHK_SHIFT_TEXT),
@@ -82,8 +107,10 @@ local options = {
         exec = {
             type = 'execute',
             name = 'Reload UI',
-            func = function() ReloadUI() end
-        }
+            func = function() ReloadUI() end,
+            order = OrderIncrement()
+        },
+
     }
 }
 
@@ -123,6 +150,7 @@ function frame:OnEvent()
                 local button = _G[btn .. i]
                 if button then
                     hooksecurefunc(button, 'UpdateHotkeys', UpdateHotkey)
+                    _G[btn..i.."Name"]:SetAlpha(HideMacro())
                 end
             end
         end
