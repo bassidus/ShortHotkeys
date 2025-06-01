@@ -1,10 +1,9 @@
 local addonName = 'ShortHotkeys'
 local addon = LibStub('AceAddon-3.0'):NewAddon(addonName, 'AceConsole-3.0', 'AceEvent-3.0')
 local frame = CreateFrame('Frame')
-local db = nil
-local build = select(4, GetBuildInfo());
+local isRetail = select(4, GetBuildInfo()) >= 100000
 local _order = 0
-
+local db = nil
 
 local defaults = {
     profile = {
@@ -15,11 +14,13 @@ local defaults = {
     }
 }
 
+local function Reset()
+    db.profile.addon.keymap = _G.SHK_LOCAL
+    db.profile.addon.hideMacro = false
+end
+
 local function HideMacro()
-    if db.profile.addon.hideMacro then
-        return 0
-    end
-    return 1
+    return db.profile.addon.hideMacro and 0 or 1
 end
 
 local function OrderIncrement()
@@ -27,24 +28,16 @@ local function OrderIncrement()
     return _order
 end
 
-local function Description(text)
-    -- _order = _order + 1
-    if not text then
-        text = '' -- useful for making new row
-    end
+local function NewRow(text)
     return {
-        type = 'description', fontSize = 'medium', name = text, order = OrderIncrement()
+        type = 'description', fontSize = 'medium', name = text or '', order = OrderIncrement()
     }
 end
 
 local function InputBox(_name, text)
-    -- _order = _order + 1
-    if not text then
-        text = _name
-    end
     return {
         type = 'input',
-        name = text,
+        name = text or _name,
         get = function() return db.profile.addon.keymap[_name] end,
         set = function(_, value)
             db.profile.addon.keymap[_name] = value
@@ -59,7 +52,7 @@ local options = {
     handler = addon,
     type = 'group',
     args = {
-        header = Description(_G.SHK_TEXT),
+        header = NewRow(_G.SHK_TEXT),
         hideMacro = {
             type = "toggle",
             name = "Hide Macro Text",
@@ -70,19 +63,19 @@ local options = {
             end,
             order = OrderIncrement()
         },
-        l0 = Description(), -- new row
+        l0 = NewRow(), -- new row
 
         ibAlt = InputBox(_G.SHK_ALT, _G.SHK_ALT_TEXT),
         ibCtrl = InputBox(_G.SHK_CTRL, _G.SHK_CTRL_TEXT),
         ibShift = InputBox(_G.SHK_SHIFT, _G.SHK_SHIFT_TEXT),
         ibNumPad = InputBox(_G.SHK_NUMPAD),
-        l1 = Description(), -- new row
+        l1 = NewRow(), -- new row
 
         ibMouse = InputBox(_G.SHK_MOUSE),
         ibM3 = InputBox(_G.KEY_BUTTON3),
         ibWheelUp = InputBox(_G.KEY_MOUSEWHEELUP),
         ibWheelDown = InputBox(_G.KEY_MOUSEWHEELDOWN),
-        l2 = Description(), -- new row
+        l2 = NewRow(), -- new row
 
         ibBackspace = InputBox(_G.KEY_BACKSPACE),
         ibCapslock = InputBox(_G.CAPSLOCK_KEY_TEXT),
@@ -95,19 +88,28 @@ local options = {
         ibPageUp = InputBox(_G.KEY_PAGEUP),
         ibSpace = InputBox(_G.KEY_SPACE),
         ibTab = InputBox(_G.KEY_TAB),
-        l3 = Description(), -- new row
+        l3 = NewRow(), -- new row
 
         ibUp = InputBox(_G.KEY_UP),
         ibDown = InputBox(_G.KEY_DOWN),
         ibLeft = InputBox(_G.KEY_LEFT),
         ibRight = InputBox(_G.KEY_RIGHT),
-        l4 = Description(), -- new row
-        tip = Description(_G.SHK_IMPORTANT),
-        l5 = Description(), -- new row
-        exec = {
+        l4 = NewRow(), -- new row
+        tip = NewRow(_G.SHK_IMPORTANT),
+        l5 = NewRow(), -- new row
+        reload = {
             type = 'execute',
             name = 'Reload UI',
             func = function() ReloadUI() end,
+            order = OrderIncrement()
+        },
+        reset = {
+            type = 'execute',
+            name = 'Reset to Defaults',
+            func = function ()
+                Reset()
+                ReloadUI()
+            end,
             order = OrderIncrement()
         },
 
@@ -125,16 +127,17 @@ function addon:OnInitialize()
     end)
 end
 
-function frame:OnEvent()
-    local function UpdateHotkey(self)
-        local hotkey = self.HotKey
-        local text = hotkey:GetText()
-        for k, v in pairs(db.profile.addon.keymap) do
-            text = text:gsub(k, v)
-        end
-        hotkey:SetText(text)
+local function UpdateHotkey(self)
+    local hotkey = self.HotKey
+    local text = hotkey:GetText()
+    for k, v in pairs(db.profile.addon.keymap) do
+        text = text:gsub(k, v)
     end
-    if (build >= 100000) then -- Retail
+    hotkey:SetText(text)
+end
+
+function frame:OnEvent()
+    if (isRetail) then -- Retail
         local action_bars = {
             'ActionButton',
             'MultiBarBottomRightButton',
@@ -146,11 +149,11 @@ function frame:OnEvent()
             'MultiBarBottomLeftButton',
         }
         for _, btn in ipairs(action_bars) do
-            for i = 1, NUM_ACTIONBAR_BUTTONS do
+            for i = 1, _G.NUM_ACTIONBAR_BUTTONS do
                 local button = _G[btn .. i]
                 if button then
                     hooksecurefunc(button, 'UpdateHotkeys', UpdateHotkey)
-                    _G[btn..i.."Name"]:SetAlpha(HideMacro())
+                    _G[btn .. i .. "Name"]:SetAlpha(HideMacro())
                 end
             end
         end
