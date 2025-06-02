@@ -1,7 +1,7 @@
--- This file is translated entirely with ChatGPT and probably needs some fixes
+local addonName = ...
+local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "deDE")
 
-if (GetLocale() == "deDE") then
-    _G.SHK_TEXT = [[
+L.SHK_TEXT = [[
 
 Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du mit den Standardwerten nicht zufrieden bist.
 
@@ -10,7 +10,7 @@ Tipp: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird
 ]]
 
 
-    _G.SHK_IMPORTANT = WrapTextInColorCode('WICHTIG!', 'FFFF2A2A') .. [[
+L.SHK_IMPORTANT = WrapTextInColorCode('WICHTIG!', 'FFFF2A2A') .. [[
 
 
 Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf 'Okay' im aktuellen Textfeld klicken.
@@ -20,41 +20,40 @@ Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um d
 ]]
 
 
-    _G.SHK_MOUSE = 'Maustaste '     -- wichtig: Leerzeichen am Ende lassen
-    _G.SHK_NUMPAD = 'Ziffernblock ' -- wichtig: Leerzeichen am Ende lassen
-    _G.SHK_ALT = 'a%-'
-    _G.SHK_ALT_TEXT = 'ALT'
-    _G.SHK_CTRL = 'c%-'
-    _G.SHK_CTRL_TEXT = 'STRG'
-    _G.SHK_SHIFT = 's%-'
-    _G.SHK_SHIFT_TEXT = 'UMSCHALT'
+L.SHK_MOUSE = 'Maustaste '     -- wichtig: Leerzeichen am Ende lassen
+L.SHK_NUMPAD = 'Ziffernblock ' -- wichtig: Leerzeichen am Ende lassen
+L.SHK_ALT = 'a%-'
+L.SHK_ALT_TEXT = 'ALT'
+L.SHK_CTRL = 'c%-'
+L.SHK_CTRL_TEXT = 'STRG'
+L.SHK_SHIFT = 's%-'
+L.SHK_SHIFT_TEXT = 'UMSCHALT'
 
-    _G.SHK_LOCAL = {
-        [_G.SHK_ALT] = "A",      -- Alt
-        [_G.SHK_CTRL] = "S",     -- Strg (C is too ambiguous in German, but left as S for "Steuerung")
-        [_G.SHK_SHIFT] = "U",    -- Umschalt
+L.SHK_LOCAL = {
+    [L.SHK_ALT] = "A",      -- Alt
+    [L.SHK_CTRL] = "S",     -- Strg (C is too ambiguous in German, but left as S for "Steuerung")
+    [L.SHK_SHIFT] = "U",    -- Umschalt
 
-        [_G.SHK_NUMPAD] = 'N',   -- z. B. N1, N2, ...
-        [_G.SHK_MOUSE] = 'M',    -- z. B. M4, M5, ...
-        [_G.KEY_BUTTON3] = 'M3', -- Mittlere Maustaste
-        [_G.KEY_MOUSEWHEELUP] = 'WU',
-        [_G.KEY_MOUSEWHEELDOWN] = 'WD',
+    [L.SHK_NUMPAD] = 'N',   -- z. B. N1, N2, ...
+    [L.SHK_MOUSE] = 'M',    -- z. B. M4, M5, ...
+    [L.KEY_BUTTON3] = 'M3', -- Mittlere Maustaste
+    [L.KEY_MOUSEWHEELUP] = 'WU',
+    [L.KEY_MOUSEWHEELDOWN] = 'WD',
 
-        [_G.KEY_BACKSPACE] = "BS",
-        [_G.CAPSLOCK_KEY_TEXT] = 'CL',
-        [_G.KEY_DELETE] = "EN", -- Entfernen
-        [_G.KEY_END] = "EN",
-        [_G.KEY_HOME] = "HM",
-        [_G.KEY_INSERT] = "IN",
-        [_G.KEY_NUMLOCK] = "NL",
-        [_G.KEY_PAGEDOWN] = "PD",
-        [_G.KEY_PAGEUP] = "PU",
-        [_G.KEY_SPACE] = "LE", -- Leertaste
-        [_G.KEY_TAB] = "TB",
+    [L.KEY_BACKSPACE] = "BS",
+    [L.CAPSLOCK_KEY_TEXT] = 'CL',
+    [L.KEY_DELETE] = "EN", -- Entfernen
+    [L.KEY_END] = "EN",
+    [L.KEY_HOME] = "HM",
+    [L.KEY_INSERT] = "IN",
+    [L.KEY_NUMLOCK] = "NL",
+    [L.KEY_PAGEDOWN] = "PD",
+    [L.KEY_PAGEUP] = "PU",
+    [L.KEY_SPACE] = "LE", -- Leertaste
+    [L.KEY_TAB] = "TB",
 
-        [_G.KEY_UP] = "HO",    -- Hoch
-        [_G.KEY_DOWN] = "RU",  -- Runter
-        [_G.KEY_LEFT] = "LI",  -- Links
-        [_G.KEY_RIGHT] = "RE", -- Rechts
-    }
-end
+    [L.KEY_UP] = "HO",    -- Hoch
+    [L.KEY_DOWN] = "RU",  -- Runter
+    [L.KEY_LEFT] = "LI",  -- Links
+    [L.KEY_RIGHT] = "RE", -- Rechts
+}
