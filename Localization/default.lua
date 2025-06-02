@@ -5,9 +5,7 @@ Tip: If the text exceeds three characters, it will be truncated. Therefore, it's
 
 ]]
 
-_G.SHK_IMPORTANT = WrapTextInColorCode('IMPORTANT!', 'FFFF2A2A') .. [[ For every change you make, you need to hit Enter or press 'Okay' in the current text box. When you are done, a reload of the UI is required to update the changes.
-
-]]
+_G.SHK_IMPORTANT = WrapTextInColorCode('IMPORTANT! ', 'FFFF2A2A') .. 'For every change you make, you need to hit Enter or press \'Okay\' in the current text box. When you are done, a reload of the UI is required to update the changes.'
 
 _G.SHK_MOUSE = 'Mouse Button ' -- important to leave space at end
 _G.SHK_NUMPAD = 'Num Pad '     -- important to leave space at end

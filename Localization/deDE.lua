@@ -1,4 +1,4 @@
--- This file is translated entirely with ChatGPT and probably needs some fixes
+-- This file is translated to German by Larsj02 (https://github.com/Larsj02)
 
 if (GetLocale() == "deDE") then
     _G.SHK_TEXT = [[
@@ -7,11 +7,8 @@ Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du m
 Hinweis: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
 
 ]]
+    _G.SHK_IMPORTANT = WrapTextInColorCode('WICHTIG! ', 'FFFF2A2A') .. 'Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf \'Okay\' im aktuellen Textfeld klicken. Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um die Änderungen zu übernehmen.'
 
-
-    _G.SHK_IMPORTANT = WrapTextInColorCode('WICHTIG!', 'FFFF2A2A') .. [[ Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf 'Okay' im aktuellen Textfeld klicken. Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um die Änderungen zu übernehmen.
-
-]]
     _G.SHK_MOUSE = 'Maustaste '     -- wichtig: Leerzeichen am Ende lassen
     _G.SHK_NUMPAD = 'Ziffernblock ' -- wichtig: Leerzeichen am Ende lassen
     _G.SHK_ALT = 'a%-'

@@ -6,6 +6,5 @@
 ## SavedVariables: ShortHotkeysDB
 
 Libs\libs.xml
-
 Localization/loc.xml
 Core.lua
