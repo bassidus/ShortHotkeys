@@ -1,22 +1,21 @@
-local addonName = ...
+local addonName = 'ShortHotkeys'
 local addon = LibStub('AceAddon-3.0'):NewAddon(addonName, 'AceConsole-3.0', 'AceEvent-3.0')
 local frame = CreateFrame('Frame')
 local isRetail = select(4, GetBuildInfo()) >= 100000
 local _order = 0
 local db = nil
-local L = LibStub("AceLocale-3.0"):GetLocale(addonName)
 
 local defaults = {
     profile = {
         addon = {
-            keymap = L.SHK_LOCAL,
+            keymap = _G.SHK_LOCAL,
             hideMacro = false
         },
     }
 }
 
 local function Reset()
-    db.profile.addon.keymap = L.SHK_LOCAL
+    db.profile.addon.keymap = _G.SHK_LOCAL
     db.profile.addon.hideMacro = false
 end
 
@@ -53,7 +52,7 @@ local options = {
     handler = addon,
     type = 'group',
     args = {
-        header = NewRow(L.SHK_TEXT),
+        header = NewRow(_G.SHK_TEXT),
         hideMacro = {
             type = "toggle",
             name = "Hide Macro Text",
@@ -66,37 +65,37 @@ local options = {
         },
         l0 = NewRow(), -- new row
 
-        ibAlt = InputBox(L.SHK_ALT, L.SHK_ALT_TEXT),
-        ibCtrl = InputBox(L.SHK_CTRL, L.SHK_CTRL_TEXT),
-        ibShift = InputBox(L.SHK_SHIFT, L.SHK_SHIFT_TEXT),
-        ibNumPad = InputBox(L.SHK_NUMPAD),
+        ibAlt = InputBox(_G.SHK_ALT, _G.SHK_ALT_TEXT),
+        ibCtrl = InputBox(_G.SHK_CTRL, _G.SHK_CTRL_TEXT),
+        ibShift = InputBox(_G.SHK_SHIFT, _G.SHK_SHIFT_TEXT),
+        ibNumPad = InputBox(_G.SHK_NUMPAD),
         l1 = NewRow(), -- new row
 
-        ibMouse = InputBox(L.SHK_MOUSE),
-        ibM3 = InputBox(L.KEY_BUTTON3),
-        ibWheelUp = InputBox(L.KEY_MOUSEWHEELUP),
-        ibWheelDown = InputBox(L.KEY_MOUSEWHEELDOWN),
+        ibMouse = InputBox(_G.SHK_MOUSE),
+        ibM3 = InputBox(_G.KEY_BUTTON3),
+        ibWheelUp = InputBox(_G.KEY_MOUSEWHEELUP),
+        ibWheelDown = InputBox(_G.KEY_MOUSEWHEELDOWN),
         l2 = NewRow(), -- new row
 
-        ibBackspace = InputBox(L.KEY_BACKSPACE),
-        ibCapslock = InputBox(L.CAPSLOCK_KEY_TEXT),
-        ibDelete = InputBox(L.KEY_DELETE),
-        ibEnd = InputBox(L.KEY_END),
-        ibHome = InputBox(L.KEY_HOME),
-        ibInsert = InputBox(L.KEY_INSERT),
-        ibNumlock = InputBox(L.KEY_NUMLOCK),
-        ibPageDown = InputBox(L.KEY_PAGEDOWN),
-        ibPageUp = InputBox(L.KEY_PAGEUP),
-        ibSpace = InputBox(L.KEY_SPACE),
-        ibTab = InputBox(L.KEY_TAB),
+        ibBackspace = InputBox(_G.KEY_BACKSPACE),
+        ibCapslock = InputBox(_G.CAPSLOCK_KEY_TEXT),
+        ibDelete = InputBox(_G.KEY_DELETE),
+        ibEnd = InputBox(_G.KEY_END),
+        ibHome = InputBox(_G.KEY_HOME),
+        ibInsert = InputBox(_G.KEY_INSERT),
+        ibNumlock = InputBox(_G.KEY_NUMLOCK),
+        ibPageDown = InputBox(_G.KEY_PAGEDOWN),
+        ibPageUp = InputBox(_G.KEY_PAGEUP),
+        ibSpace = InputBox(_G.KEY_SPACE),
+        ibTab = InputBox(_G.KEY_TAB),
         l3 = NewRow(), -- new row
 
-        ibUp = InputBox(L.KEY_UP),
-        ibDown = InputBox(L.KEY_DOWN),
-        ibLeft = InputBox(L.KEY_LEFT),
-        ibRight = InputBox(L.KEY_RIGHT),
+        ibUp = InputBox(_G.KEY_UP),
+        ibDown = InputBox(_G.KEY_DOWN),
+        ibLeft = InputBox(_G.KEY_LEFT),
+        ibRight = InputBox(_G.KEY_RIGHT),
         l4 = NewRow(), -- new row
-        tip = NewRow(L.SHK_IMPORTANT),
+        tip = NewRow(_G.SHK_IMPORTANT),
         l5 = NewRow(), -- new row
         reload = {
             type = 'execute',
