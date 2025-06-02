@@ -5,7 +5,7 @@ if (GetLocale() == "deDE") then
 
 Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du mit den Standardwerten nicht zufrieden bist.
 
-Tipp: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
+Hinweis: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
 
 ]]
 
@@ -31,26 +31,26 @@ Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um d
 
     _G.SHK_LOCAL = {
         [_G.SHK_ALT] = "A",      -- Alt
-        [_G.SHK_CTRL] = "S",     -- Strg (C is too ambiguous in German, but left as S for "Steuerung")
+        [_G.SHK_CTRL] = "S",     -- Strg
         [_G.SHK_SHIFT] = "U",    -- Umschalt
 
         [_G.SHK_NUMPAD] = 'N',   -- z. B. N1, N2, ...
         [_G.SHK_MOUSE] = 'M',    -- z. B. M4, M5, ...
         [_G.KEY_BUTTON3] = 'M3', -- Mittlere Maustaste
-        [_G.KEY_MOUSEWHEELUP] = 'WU',
-        [_G.KEY_MOUSEWHEELDOWN] = 'WD',
+        [_G.KEY_MOUSEWHEELUP] = 'MH', -- Mausrad hoch
+        [_G.KEY_MOUSEWHEELDOWN] = 'MR', -- Mausrad runter
 
-        [_G.KEY_BACKSPACE] = "BS",
-        [_G.CAPSLOCK_KEY_TEXT] = 'CL',
-        [_G.KEY_DELETE] = "EN", -- Entfernen
-        [_G.KEY_END] = "EN",
-        [_G.KEY_HOME] = "HM",
-        [_G.KEY_INSERT] = "IN",
-        [_G.KEY_NUMLOCK] = "NL",
-        [_G.KEY_PAGEDOWN] = "PD",
-        [_G.KEY_PAGEUP] = "PU",
+        [_G.KEY_BACKSPACE] = "RÜ", -- Rücktaste
+        [_G.CAPSLOCK_KEY_TEXT] = 'FS', -- Feststelltaste
+        [_G.KEY_DELETE] = "EF", -- Entfernen
+        [_G.KEY_END] = "EN", -- Ende
+        [_G.KEY_HOME] = "P1", -- Pos1 (Home taste)
+        [_G.KEY_INSERT] = "EI", -- Einfügen
+        [_G.KEY_NUMLOCK] = "NL", --Num lock
+        [_G.KEY_PAGEDOWN] = "BR", -- Bild Runter
+        [_G.KEY_PAGEUP] = "BH", -- Bild Hoch
         [_G.KEY_SPACE] = "LE", -- Leertaste
-        [_G.KEY_TAB] = "TB",
+        [_G.KEY_TAB] = "TB", -- Tab
 
         [_G.KEY_UP] = "HO",    -- Hoch
         [_G.KEY_DOWN] = "RU",  -- Runter
