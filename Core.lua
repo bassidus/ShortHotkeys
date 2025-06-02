@@ -53,17 +53,17 @@ local options = {
     type = 'group',
     args = {
         header = NewRow(_G.SHK_TEXT),
-        hideMacro = {
-            type = "toggle",
-            name = "Hide Macro Text",
-            desc = 'If checked, macro text will be hidden from action bars',
-            get = function() return db.profile.addon.hideMacro end,
-            set = function(_, value)
-                db.profile.addon.hideMacro = value
-            end,
-            order = OrderIncrement()
-        },
-        l0 = NewRow(), -- new row
+        -- hideMacro = {
+        --     type = "toggle",
+        --     name = "Hide Macro Text",
+        --     desc = 'If checked, macro text will be hidden from action bars',
+        --     get = function() return db.profile.addon.hideMacro end,
+        --     set = function(_, value)
+        --         db.profile.addon.hideMacro = value
+        --     end,
+        --     order = OrderIncrement()
+        -- },
+        -- l0 = NewRow(), -- new row
 
         ibAlt = InputBox(_G.SHK_ALT, _G.SHK_ALT_TEXT),
         ibCtrl = InputBox(_G.SHK_CTRL, _G.SHK_CTRL_TEXT),
@@ -112,7 +112,16 @@ local options = {
             end,
             order = OrderIncrement()
         },
-
+        hideMacro = {
+            type = "toggle",
+            name = "Hide Macro Text",
+            desc = 'If checked, macro text will be hidden from action bars',
+            get = function() return db.profile.addon.hideMacro end,
+            set = function(_, value)
+                db.profile.addon.hideMacro = value
+            end,
+            order = OrderIncrement()
+        },
     }
 }
 

@@ -1,17 +1,11 @@
 _G.SHK_TEXT = [[
-
 Here you can customize the keybind text to your liking if you're not satisfied with the defaults.
 
 Tip: If the text exceeds three characters, it will be truncated. Therefore, it's recommended to keep modifier keys to one character and other keys to a maximum of two characters.
 
 ]]
 
-_G.SHK_IMPORTANT = WrapTextInColorCode('IMPORTANT!', 'FFFF2A2A') .. [[
-
-
-For every change you make, you need to hit Enter or press 'Okay' in the current text box.
-
-When you are done, a reload of the UI is required to update the changes.
+_G.SHK_IMPORTANT = WrapTextInColorCode('IMPORTANT!', 'FFFF2A2A') .. [[ For every change you make, you need to hit Enter or press 'Okay' in the current text box. When you are done, a reload of the UI is required to update the changes.
 
 ]]
 
