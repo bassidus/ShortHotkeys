@@ -5,7 +5,7 @@ L.SHK_TEXT = [[
 
 Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du mit den Standardwerten nicht zufrieden bist.
 
-Tipp: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
+Hinweis: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
 
 ]]
 
@@ -18,6 +18,7 @@ Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf 'Okay' i
 Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um die Änderungen zu übernehmen.
 
 ]]
+
 
 
 L.SHK_MOUSE = 'Maustaste '     -- wichtig: Leerzeichen am Ende lassen
@@ -57,3 +58,4 @@ L.SHK_LOCAL = {
     [L.KEY_LEFT] = "LI",  -- Links
     [L.KEY_RIGHT] = "RE", -- Rechts
 }
+
