@@ -1,28 +1,32 @@
-_G.SHK_TEXT = [[
+SHK = {}
+SHK.TEXT = [[
 Here you can customize the keybind text to your liking if you're not satisfied with the defaults.
 
 Tip: If the text exceeds three characters, it will be truncated. Therefore, it's recommended to keep modifier keys to one character and other keys to a maximum of two characters.
 
 ]]
 
-_G.SHK_IMPORTANT = WrapTextInColorCode('IMPORTANT! ', 'FFFF2A2A') .. 'For every change you make, you need to hit Enter or press \'Okay\' in the current text box. When you are done, a reload of the UI is required to update the changes.'
+SHK.IMPORTANT = WrapTextInColorCode('IMPORTANT! ', 'FFFF2A2A') .. 'For every change you make, you need to hit Enter or press \'Okay\' in the current text box. When you are done, a reload of the UI is required to update the changes.'
 
-_G.SHK_MOUSE = 'Mouse Button ' -- important to leave space at end
-_G.SHK_NUMPAD = 'Num Pad '     -- important to leave space at end
-_G.SHK_ALT = 'a%-'
-_G.SHK_ALT_TEXT = 'ALT'
-_G.SHK_CTRL = 'c%-'
-_G.SHK_CTRL_TEXT = 'CTRL'
-_G.SHK_SHIFT = 's%-'
-_G.SHK_SHIFT_TEXT = 'SHIFT'
+SHK.MOUSE = 'Mouse Button ' -- important to leave space at end
+SHK.NUMPAD = 'Num Pad '     -- important to leave space at end
+SHK.ALT = 'a%-'
+SHK.ALT_TEXT = 'Alt'
+SHK.CTRL = 'c%-'
+SHK.CTRL_TEXT = 'Ctrl'
+SHK.SHIFT = 's%-'
+SHK.SHIFT_TEXT = 'Shift'
 
-_G.SHK_LOCAL = {
-    [_G.SHK_ALT] = "A",      -- alt
-    [_G.SHK_CTRL] = "C",     -- ctrl
-    [_G.SHK_SHIFT] = "S",    -- shift
-    [_G.SHK_NUMPAD] = 'N',   -- eg N1, N2, ...
+-- variable names that starts with _G is default blizzard global strings
+-- and will be automatically translated
 
-    [_G.SHK_MOUSE] = 'M',    -- eg M4, M5, ...
+SHK.LOCAL = { -- [KEY] = replace with value
+    [SHK.ALT] = "A",      -- alt
+    [SHK.CTRL] = "C",     -- ctrl
+    [SHK.SHIFT] = "S",    -- shift
+    [SHK.NUMPAD] = 'N',   -- eg N1, N2, ...
+
+    [SHK.MOUSE] = 'M',    -- eg M4, M5, ...
     [_G.KEY_BUTTON3] = 'M3', -- middle mouse
     [_G.KEY_MOUSEWHEELUP] = 'WU',
     [_G.KEY_MOUSEWHEELDOWN] = 'WD',

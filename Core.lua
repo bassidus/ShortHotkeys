@@ -1,4 +1,4 @@
-local addonName = 'ShortHotkeys'
+local addonName = ...
 local addon = LibStub('AceAddon-3.0'):NewAddon(addonName, 'AceConsole-3.0', 'AceEvent-3.0')
 local frame = CreateFrame('Frame')
 local isRetail = select(4, GetBuildInfo()) >= 100000
@@ -8,14 +8,14 @@ local db = nil
 local defaults = {
     profile = {
         addon = {
-            keymap = _G.SHK_LOCAL,
+            keymap = SHK.LOCAL,
             hideMacro = false
         },
     }
 }
 
 local function Reset()
-    db.profile.addon.keymap = _G.SHK_LOCAL
+    db.profile.addon.keymap = SHK.LOCAL
     db.profile.addon.hideMacro = false
 end
 
@@ -52,26 +52,15 @@ local options = {
     handler = addon,
     type = 'group',
     args = {
-        header = NewRow(_G.SHK_TEXT),
-        -- hideMacro = {
-        --     type = "toggle",
-        --     name = "Hide Macro Text",
-        --     desc = 'If checked, macro text will be hidden from action bars',
-        --     get = function() return db.profile.addon.hideMacro end,
-        --     set = function(_, value)
-        --         db.profile.addon.hideMacro = value
-        --     end,
-        --     order = OrderIncrement()
-        -- },
-        -- l0 = NewRow(), -- new row
-
-        ibAlt = InputBox(_G.SHK_ALT, _G.SHK_ALT_TEXT),
-        ibCtrl = InputBox(_G.SHK_CTRL, _G.SHK_CTRL_TEXT),
-        ibShift = InputBox(_G.SHK_SHIFT, _G.SHK_SHIFT_TEXT),
-        ibNumPad = InputBox(_G.SHK_NUMPAD),
+        header = NewRow(SHK.TEXT),
+        
+        ibAlt = InputBox(SHK.ALT, SHK.ALT_TEXT),
+        ibCtrl = InputBox(SHK.CTRL, SHK.CTRL_TEXT),
+        ibShift = InputBox(SHK.SHIFT, SHK.SHIFT_TEXT),
+        ibNumPad = InputBox(SHK.NUMPAD),
         l1 = NewRow(), -- new row
 
-        ibMouse = InputBox(_G.SHK_MOUSE),
+        ibMouse = InputBox(SHK.MOUSE),
         ibM3 = InputBox(_G.KEY_BUTTON3),
         ibWheelUp = InputBox(_G.KEY_MOUSEWHEELUP),
         ibWheelDown = InputBox(_G.KEY_MOUSEWHEELDOWN),
@@ -95,7 +84,7 @@ local options = {
         ibLeft = InputBox(_G.KEY_LEFT),
         ibRight = InputBox(_G.KEY_RIGHT),
         l4 = NewRow(), -- new row
-        tip = NewRow(_G.SHK_IMPORTANT),
+        tip = NewRow(SHK.IMPORTANT),
         l5 = NewRow(), -- new row
         reload = {
             type = 'execute',
