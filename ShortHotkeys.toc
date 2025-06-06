@@ -1,10 +1,10 @@
 ## Title: ShortHotkeys
 ## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110100
 
-## Version: 29
+## Version: 30
 ## Author: bassidus
 ## SavedVariables: ShortHotkeysDB
 
 Libs\libs.xml
-Locales/locales.xml
+Locales\locales.xml
 Shk.lua
