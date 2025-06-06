@@ -1,13 +1,9 @@
--- This file is translated to German by Larsj02 (https://github.com/Larsj02)
-
-if (GetLocale() == "deDE") then
-    SHK.TEXT = [[
-Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du mit den Standardwerten nicht zufrieden bist.
-
-Hinweis: Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.
-
-]]
-    SHK.IMPORTANT = WrapTextInColorCode('WICHTIG! ', 'FFFF2A2A') .. 'Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf \'Okay\' im aktuellen Textfeld klicken. Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um die Änderungen zu übernehmen.'
+if (GetLocale() == "deDE") then -- Translated by Larsj02 (https://github.com/Larsj02)
+    SHK.TEXT = 'Hier kannst du den Tastenkürzel-Text nach deinen Wünschen anpassen, falls du mit den Standardwerten nicht zufrieden bist.\n\n' ..
+        WrapTextInColorCode('Hinweis: ', 'FFD9FF00') .. 'Wenn der Text länger als drei Zeichen ist, wird er abgeschnitten. Es wird daher empfohlen, ' ..
+        'Modifikatortasten auf ein Zeichen und andere Tasten auf maximal zwei Zeichen zu beschränken.'
+    SHK.IMPORTANT = WrapTextInColorCode('WICHTIG! ', 'FFFF2A2A') .. 'Für jede Änderung, die du vornimmst, musst du Enter drücken oder auf \'Okay\' ' ..
+        'im aktuellen Textfeld klicken. Wenn du fertig bist, ist ein Neuladen der Benutzeroberfläche erforderlich, um die Änderungen zu übernehmen.'
 
     SHK.MOUSE = 'Maustaste '     -- wichtig: Leerzeichen am Ende lassen
     SHK.NUMPAD = 'Ziffernblock ' -- wichtig: Leerzeichen am Ende lassen
