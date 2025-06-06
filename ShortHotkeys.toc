@@ -1,7 +1,7 @@
 ## Title: ShortHotkeys
 ## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110100
 
-## Version: 2.2
+## Version: 28
 ## Author: bassidus
 ## SavedVariables: ShortHotkeysDB
 
