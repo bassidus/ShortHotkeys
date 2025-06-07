@@ -43,7 +43,7 @@ SHK.LOCAL = {
     [_G.KEY_SPACE] = "ПР",
     [_G.KEY_TAB] = "ТБ",
 
-    [_G.KEY_UP] = "ВП",    -- up arrow
+    [_G.KEY_UP] = "ВВ",    -- up arrow
     [_G.KEY_DOWN] = "ВН",  -- down arrow
     [_G.KEY_LEFT] = "ВЛ",  -- left arrow
     [_G.KEY_RIGHT] = "ВП", -- right arrow
