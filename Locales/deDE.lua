@@ -11,12 +11,15 @@ if (GetLocale() == "deDE") then -- Translated by Larsj02 (https://github.com/Lar
     SHK.ALT_TEXT = 'Alt'
     SHK.CTRL = 'c%-'
     SHK.CTRL_TEXT = 'Strg'
+    SHK.COMMAND = 'm%-'             -- For Mac only [NEED TRANSLATION]
+    SHK.COMMAND_TEXT = 'Command (Mac only)'    -- For Mac only [NEED TRANSLATION]
     SHK.SHIFT = 's%-'
     SHK.SHIFT_TEXT = 'Umschalt'
 
     SHK.LOCAL = {
         [SHK.ALT] = "A",      -- Alt
         [SHK.CTRL] = "S",     -- Strg
+        [SHK.COMMAND] = "M",        -- mac command
         [SHK.SHIFT] = "U",    -- Umschalt
 
         [SHK.NUMPAD] = 'N',   -- z. B. N1, N2, ...

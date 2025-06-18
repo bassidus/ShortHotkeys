@@ -14,6 +14,8 @@ if (GetLocale() == "ruRU") then -- Translated by ZamestoTV
     SHK.ALT_TEXT = 'Alt'
     SHK.CTRL = 'c%-'
     SHK.CTRL_TEXT = 'Ctrl'
+    SHK.COMMAND = 'm%-'             -- For Mac only [NEED TRANSLATION]
+    SHK.COMMAND_TEXT = 'Command (Mac only)'    -- For Mac only [NEED TRANSLATION]
     SHK.SHIFT = 's%-'
     SHK.SHIFT_TEXT = 'Shift'
 
@@ -23,6 +25,7 @@ if (GetLocale() == "ruRU") then -- Translated by ZamestoTV
         -- [KEY] = replace with value
         [SHK.ALT] = "A", -- alt
         [SHK.CTRL] = "C", -- ctrl
+        [SHK.COMMAND] = "M",        -- mac command
         [SHK.SHIFT] = "S", -- shift
         [SHK.NUMPAD] = 'Н', -- eg N1, N2, ...
 

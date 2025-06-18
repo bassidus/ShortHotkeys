@@ -57,7 +57,7 @@ local options = {
         ibAlt = InputBox(SHK.ALT, SHK.ALT_TEXT),
         ibCtrl = InputBox(SHK.CTRL, SHK.CTRL_TEXT),
         ibShift = InputBox(SHK.SHIFT, SHK.SHIFT_TEXT),
-        ibNumPad = InputBox(SHK.NUMPAD),
+        ibCommand = InputBox(SHK.COMMAND, SHK.COMMAND_TEXT),
         l1 = NewRow(), -- new row
 
         ibMouse = InputBox(SHK.MOUSE),
@@ -77,6 +77,7 @@ local options = {
         ibPageUp = InputBox(_G.KEY_PAGEUP),
         ibSpace = InputBox(_G.KEY_SPACE),
         ibTab = InputBox(_G.KEY_TAB),
+        ibNumPad = InputBox(SHK.NUMPAD),
         l3 = NewRow(), -- new row
 
         ibUp = InputBox(_G.KEY_UP),

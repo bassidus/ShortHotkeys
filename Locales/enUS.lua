@@ -13,6 +13,8 @@ SHK.ALT = 'a%-'
 SHK.ALT_TEXT = 'Alt'
 SHK.CTRL = 'c%-'
 SHK.CTRL_TEXT = 'Ctrl'
+SHK.COMMAND = 'm%-'             -- For Mac only
+SHK.COMMAND_TEXT = 'Command (Mac only)'    -- For Mac only
 SHK.SHIFT = 's%-'
 SHK.SHIFT_TEXT = 'Shift'
 
@@ -22,6 +24,7 @@ SHK.LOCAL = {
     -- [KEY] = replace with value
     [SHK.ALT] = "A",         -- alt
     [SHK.CTRL] = "C",        -- ctrl
+    [SHK.COMMAND] = "M",        -- mac command
     [SHK.SHIFT] = "S",       -- shift
     [SHK.NUMPAD] = 'N',      -- eg N1, N2, ...
 
